@@ -33,7 +33,7 @@ const Orders = () => {
             <table>
               <thead>
                 <tr>
-                  <th>Order ID</th>
+                  <th>Order</th>
                   <th>Product</th>
                   <th>Quantity</th>
                   <th>Price</th>
@@ -45,7 +45,7 @@ const Orders = () => {
                 {allOrders.map((order, index) => {
                   return (
                     <tr key={index}>
-                      <td>{order._id}</td>
+                      <td>{index}</td>
                       <td>{order.name}</td>
                       <td>{order.qty}</td>
                       <td>{order.price.toFixed(2)}</td>
