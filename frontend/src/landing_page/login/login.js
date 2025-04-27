@@ -60,7 +60,7 @@ const Login = () => {
         handleSuccess("Login successful , Now you can access kite !!");
         login(); // Set login state to true on successful login
         setTimeout(() => {
-          window.location.href = "http://localhost:3001";
+          window.location.href = "http://localhost:3001" || "https://zerodha-dashboard-ufar.onrender.com";
         }, 1000);
       } else {
         handleError(message);

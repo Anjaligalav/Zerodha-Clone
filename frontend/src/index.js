@@ -14,7 +14,7 @@ import Footer from "./landing_page/Footer";
 import NotFound from './landing_page/NotFound';
 import Login from './landing_page/login/login'
 import { AuthProvider } from "./landing_page/AuthContext.js"; 
-import Logout from './landing_page/logout/logout';
+
 
  
 // import Home from 'dashboard/components/Home';
@@ -38,7 +38,7 @@ root.render(
         <Route path='/pricing' element={<PricingPage/>} />
         <Route path='/support' element={<SupportPage/>} />
         <Route path='/login' element={<Login/>}/>
-        <Route path="/logout" element={<Logout />}/>
+        
         
         <Route path='*' element={<NotFound/>} />
         

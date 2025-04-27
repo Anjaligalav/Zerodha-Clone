@@ -10,7 +10,7 @@ const Logout = () => {
     logout();
     localStorage.removeItem('isLoggedIn'); 
     setTimeout(() => {
-        window.location.href = "http://localhost:3000";
+        window.location.href = "http://localhost:3000" || "https://zerodha-frontend-1swl.onrender.com";
       }, 1000); // or wherever your login page is
   };
 

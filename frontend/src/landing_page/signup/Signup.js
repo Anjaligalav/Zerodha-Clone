@@ -58,7 +58,7 @@ const Signup = () => {
         handleSuccess("Signup successful , Now you are part of our community, Hurray !!!!");
         console.log("SUCCESS");
         setTimeout(() => {
-          window.location.href = "http://localhost:3001";
+          window.location.href = "http://localhost:3001" || "https://zerodha-dashboard-ufar.onrender.com";
         }, 1000);
       } else {
         handleError(message);
