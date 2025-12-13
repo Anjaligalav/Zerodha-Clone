@@ -12,15 +12,34 @@ const BuyActionWindow = ({ uid }) => {
   const { closeBuyWindow } = useContext(GeneralContext); // Properly consuming context
 
   const handleBuyClick = () => {
-    axios.post("https://zerodha-backend-uxy6.onrender.com/newOrder", {
-      name: uid,
-      qty: stockQuantity,
-      price: stockPrice,
-      mode: "BUY",
+    axios.post(
+      "https://zerodha-backend-uxy6.onrender.com/newOrder", 
+      
+      // 2nd Argument: DATA (Body)
+      {
+        name: uid, // Make sure ye Stock ka naam hai (e.g., "TCS"), User ID nahi.
+        qty: stockQuantity,
+        price: stockPrice,
+        mode: "BUY",
+      },
+      
+      // 3rd Argument: CONFIG (Cookie Settings)
+      {
+        withCredentials: true 
+      }
+    )
+    .then((res) => {
+        console.log(res);
+        // Toast success message laga sakti ho yahan
+    })
+    .catch((err) => {
+        console.log(err);
     });
 
     closeBuyWindow();  // Using closeBuyWindow from context
-  };
+};
+
+ 
 
   const handleCancelClick = () => {
     closeBuyWindow();  // Using closeBuyWindow from context
