@@ -12,6 +12,8 @@ module.exports.createSecretToken = (res, id) => {
   res.cookie("token", token, {
     withCredentials: true,  // Frontend-Backend communication ke liye zaroori
     httpOnly: false,        // Abhi false rakha hai taaki JS access kar sake (Production me true kar dena)
+    sameSite: "None", 
+    secure: true,
     maxAge: 3 * 24 * 60 * 60 * 1000, // 3 Days (in milliseconds)
   });
 
