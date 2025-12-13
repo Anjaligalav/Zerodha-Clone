@@ -10,6 +10,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const { HoldingModel } = require('./models/HoldingModel');
 const { OrdersModel } = require('./models/OrdersModel');
+const {userVerification} = require('./Middlewares/AuthMiddleware');
 
 const { MONGOOSE_URL} = process.env;
 
@@ -194,22 +195,22 @@ app.use(
 // })
 app.use("/", authRoute);
 
-app.get('/allHoldings',async(req,res)=>{
+app.get('/allHoldings',userVerification,async(req,res)=>{
     let allHoldings = await HoldingModel.find({}); 
     res.json(allHoldings);
 })
 
-app.get('/allPositions',async(req,res)=>{
+app.get('/allPositions',userVerification,async(req,res)=>{
     let allPositions = await PositionsModel.find({}); 
     res.json(allPositions);
 })
 
-app.get('/allOrders',async(req,res)=>{
+app.get('/allOrders',userVerification,async(req,res)=>{
   let allOrders = await OrdersModel.find({}); 
   res.json(allOrders);
 })
 
-app.post('/newOrder',async(req,res)=>{
+app.post('/newOrder',userVerification,async(req,res)=>{
   let newOrder = new OrdersModel({
     name: req.body.name,
     qty: req.body.qty,
@@ -231,4 +232,3 @@ mongoose
 app.listen(PORT,()=>{
     console.log('App Started');
 })
-app.use("/", authRoute);

@@ -7,7 +7,9 @@ const Orders = () => {
 
   useEffect(() => {
     // Make an API call to fetch the orders
-    axios.get("https://zerodha-backend-uxy6.onrender.com/allOrders")
+    axios.get("https://zerodha-backend-uxy6.onrender.com/allOrders", {
+        withCredentials: true 
+      })
       .then((res) => {
         console.log(res.data);
         setAllOrders(res.data);

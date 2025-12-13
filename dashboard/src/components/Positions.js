@@ -9,7 +9,9 @@ const Positions = () => {
 
   useEffect(() => {
     // axios.get("http://localhost:5000/allPositions")
-    axios.get("https://zerodha-backend-uxy6.onrender.com/allPositions")
+    axios.get("https://zerodha-backend-uxy6.onrender.com/allPositions", {
+        withCredentials: true 
+      })
     .then((res) => {
       console.log(res.data);
       setAllPositions(res.data);

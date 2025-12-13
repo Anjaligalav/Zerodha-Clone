@@ -2,11 +2,9 @@ const User = require("../models/UserModel");
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
-module.exports.userVerification = async (req, res) => {
+module.exports.userVerification = async (req, res,next) => {
   try {
     const token = req.cookies.token;
-
-    // If no token is present, user is not authenticated
     if (!token) {
       return res.json({ status: false });
     }
@@ -21,7 +19,7 @@ module.exports.userVerification = async (req, res) => {
         const user = await User.findById(data.id);
         if (user) {
           // User found, return status true and username
-          return res.json({ status: true, user: user.username });
+          next();
         } else {
           // User not found (edge case, should not happen with valid tokens)
           return res.json({ status: false });
