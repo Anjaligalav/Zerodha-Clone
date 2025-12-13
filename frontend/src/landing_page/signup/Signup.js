@@ -165,31 +165,7 @@ const Signup = () => {
                 Login
               </Link>{" "}
             </button>{" "}
-            <button
-              className="text-center"
-              style={{
-                color: "white",
-                border: "1px solid black",
-                borderRadius: "4px",
-                backgroundColor: "green",
-                height: "35px",
-                width: "80px",
-                marginLeft: "20px",
-              }}
-            >
-              {" "}
-              <Link
-                style={{
-                  textDecoration: "none",
-                  fontSize: "1.2em",
-                  color: "white",
-                }}
-                to={"/"}
-              >
-                {" "}
-                Explore{" "}
-              </Link>{" "}
-            </button>
+            
           </span>
         </form>
           <ToastContainer />
