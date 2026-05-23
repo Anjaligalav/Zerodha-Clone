@@ -50,7 +50,7 @@ const Login = () => {
       console.log('Email value:', inputValue.email);
       console.log('Password value:', inputValue.password);
       const { data } = await axios.post(
-        `https://zerodha-backend-uxy6.onrender.com/login`,
+        `https://zerodha-clone-hw8j.onrender.com/login`,
         { ...inputValue },
         { withCredentials: true }
       );

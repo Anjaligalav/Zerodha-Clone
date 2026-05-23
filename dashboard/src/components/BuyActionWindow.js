@@ -13,7 +13,7 @@ const BuyActionWindow = ({ uid }) => {
 
   const handleBuyClick = () => {
     axios.post(
-      "https://zerodha-backend-uxy6.onrender.com/newOrder", 
+      "https://zerodha-clone-hw8j.onrender.com/newOrder", 
       
       // 2nd Argument: DATA (Body)
       {
